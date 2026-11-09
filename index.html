@@ -7,17 +7,22 @@
 </head>
 <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f1f5f9; color: #1e293b; margin: 0; padding: 40px 16px; line-height: 1.6;">
 
-    <main style="max-width: 800px; margin: 0 auto; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 12px; padding: 48px; box-style: border-box; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);">
+    <main style="max-width: 820px; margin: 0 auto; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 12px; padding: 48px; box-sizing: border-box; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);">
 
         <!-- Шапка -->
-        <header style="margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px solid #e2e8f0;">
-            <div style="font-size: 13px; font-weight: 700; color: #2563eb; letter-spacing: 0.08em; margin-bottom: 8px;">PAYMENT SUPPORT · TECHNICAL SUPPORT · ANALYST</div>
-            <h1 style="font-size: 32px; font-weight: 800; color: #0f172a; margin: 0 0 8px 0;">Артем Мышин</h1>
-            <p style="font-size: 15px; color: #64748b; margin: 0;">Санкт-Петербург · Готов к удаленной работе</p>
+        <header style="margin-bottom: 28px; padding-bottom: 24px; border-bottom: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: flex-start;">
+            <div>
+                <div style="font-size: 13px; font-weight: 700; color: #2563eb; letter-spacing: 0.08em; margin-bottom: 8px;">PAYMENT SUPPORT · TECHNICAL SUPPORT · ANALYST</div>
+                <h1 style="font-size: 32px; font-weight: 800; color: #0f172a; margin: 0 0 8px 0;">Артем Мышин</h1>
+                <p style="font-size: 15px; color: #64748b; margin: 0;">Санкт-Петербург · Готов к удаленной работе</p>
+            </div>
+            <div style="width: 64px; height: 64px; border-radius: 50%; background: #2563eb; color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700; flex-shrink: 0;">
+                АМ
+            </div>
         </header>
 
         <!-- Контакты -->
-        <section style="background: #f8fafc; padding: 16px 20px; border-radius: 8px; margin-bottom: 32px; font-size: 14px; border: 1px solid #e2e8f0;">
+        <section style="background: #f8fafc; padding: 16px 20px; border-radius: 8px; margin-bottom: 28px; font-size: 14px; border: 1px solid #e2e8f0;">
             <span style="font-weight: 600; color: #0f172a;">Контакты:</span> 
             <span style="color: #cbd5e1; margin: 0 8px;">|</span>
             Email: <a href="mailto:pfvfhfirf@gmail.com" style="color: #2563eb; text-decoration: none; font-weight: 500;">pfvfhfirf@gmail.com</a> 
@@ -27,16 +32,38 @@
             Тел: +7 (921) 403-56-96
         </section>
 
-        <!-- О себе -->
+        <!-- Квадраты с ключевыми показателями (как у Александра) -->
+        <section style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-bottom: 32px;">
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; text-align: center;">
+                <span style="display: block; font-size: 20px; font-weight: 700; color: #2563eb; margin-bottom: 4px;">8+ лет</span>
+                <span style="font-size: 12px; color: #64748b; font-weight: 500;">Общий опыт в саппорте</span>
+            </div>
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; text-align: center;">
+                <span style="display: block; font-size: 20px; font-weight: 700; color: #2563eb; margin-bottom: 4px;">7 000+</span>
+                <span style="font-size: 12px; color: #64748b; font-weight: 500;">Клиентов на поддержке</span>
+            </div>
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; text-align: center;">
+                <span style="display: block; font-size: 20px; font-weight: 700; color: #2563eb; margin-bottom: 4px;">English C1</span>
+                <span style="font-size: 12px; color: #64748b; font-weight: 500;">Мультиязычный сервис</span>
+            </div>
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; text-align: center;">
+                <span style="display: block; font-size: 20px; font-weight: 700; color: #2563eb; margin-bottom: 4px;">1-я & 2-я линия</span>
+                <span style="font-size: 12px; color: #64748b; font-weight: 500;">Экспертиза и объяснение</span>
+            </div>
+        </section>
+
+        <!-- О себе / Акцент на коммуникацию -->
         <section style="margin-bottom: 36px;">
-            <p style="font-size: 15px; color: #334155; margin: 0; line-height: 1.7;">Специалист с 8+ годами опыта в сфере клиентского сервиса, технической поддержки (1-я и 2-я линия), модерации данных и аналитики. Опыт работы в мультиязычных командах (EN C1) и сопровождения IT / EdTech проектов.</p>
+            <p style="font-size: 15px; color: #334155; margin: 0; line-height: 1.7;">
+                Специалист с 8+ годами опыта в сфере клиентского сервиса, технической поддержки (1-я и 2-я линия), модерации данных и аналитики. Обладаю сильным бэкграундом в преподавании и филологии, что позволяет мне на высоком уровне владеть языком, мастерски работать с текстами и предельно понятно объяснять сложные технические или клиентские вещи людям с любым уровнем подготовки. Имею подтвержденный опыт работы в мультиязычных командах (EN C1) и успешного сопровождения масштабных IT / EdTech проектов.
+            </p>
         </section>
 
         <!-- Опыт работы -->
         <section style="margin-bottom: 40px;">
             <h2 style="font-size: 16px; font-weight: 700; color: #0f172a; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 2px solid #2563eb; padding-bottom: 8px; margin-bottom: 24px;">Опыт работы</h2>
 
-            <!-- Элемент опыта 1 -->
+            <!-- Тетрика -->
             <div style="margin-bottom: 28px;">
                 <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
                     <h3 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0;">Преподаватель</h3>
@@ -46,7 +73,7 @@
                 <p style="font-size: 14px; color: #334155; margin: 0;">Фоновая работа, которой обеспечивал себя, пока пытался развиться как самостоятельный предприниматель и навайбкодить небольшую игру.</p>
             </div>
 
-            <!-- Элемент опыта 2 -->
+            <!-- Лидгид (Head of Support) -->
             <div style="margin-bottom: 28px;">
                 <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
                     <h3 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0;">1-man Support (Head of Support / 1-я и 2-я линия)</h3>
@@ -63,13 +90,13 @@
                 </ul>
             </div>
 
-            <!-- Элемент опыта 3 -->
+            <!-- Лидгид (Менеджер по регистрациям) -->
             <div style="margin-bottom: 28px;">
                 <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
                     <h3 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0;">Саппорт, Менеджер по регистрациям</h3>
                     <span style="font-size: 13px; font-weight: 600; color: #64748b; background: #f1f5f9; padding: 2px 8px; border-radius: 4px;">Август 2023 — Август 2024</span>
                 </div>
-                <div style="font-size: 14px; color: #475569; font-style: italic; margin-bottom: 8px;">Лидгид · Санкт-Петербург</div>
+                <div style="font-size: 14px; color: #475569; font-style: italic; margin-bottom: 8px;">Лидгид · Санкт-Петербург (cpa.leadgid.ru)</div>
                 <ul style="margin: 0; padding-left: 18px; font-size: 14px; color: #334155;">
                     <li style="margin-bottom: 6px;">Выполнял задачи support-менеджера: решал вопросы клиентов на русском и иностранных языках в режиме 24/7.</li>
                     <li style="margin-bottom: 6px;">В качестве менеджера по регистрациям проводил модерацию новых пользователей, оценивал риски и анализировал предоставленные данные.</li>
@@ -77,40 +104,34 @@
                 </ul>
             </div>
 
-            <!-- Элемент опыта 4 -->
+            <!-- Okko -->
             <div style="margin-bottom: 28px;">
                 <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
                     <h3 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0;">Старший специалист по работе с клиентами</h3>
                     <span style="font-size: 13px; font-weight: 600; color: #64748b; background: #f1f5f9; padding: 2px 8px; border-radius: 4px;">Декабрь 2021 — Август 2023</span>
                 </div>
-                <div style="font-size: 14px; color: #475569; font-style: italic; margin-bottom: 8px;">Okko · Санкт-Петербург</div>
+                <div style="font-size: 14px; color: #475569; font-style: italic; margin-bottom: 8px;">Okko · Санкт-Петербург (okko.tv)</div>
                 <ul style="margin: 0; padding-left: 18px; font-size: 14px; color: #334155;">
                     <li style="margin-bottom: 6px;">Первая линия поддержки (чаты, почта, соцсети).</li>
                     <li style="margin-bottom: 6px;">Решение конфликтных вопросов, помощь в решении технических моментов.</li>
                 </ul>
             </div>
-        </section>
 
-        <!-- Ключевые навыки -->
-        <section style="margin-bottom: 40px;">
-            <h2 style="font-size: 16px; font-weight: 700; color: #0f172a; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 2px solid #2563eb; padding-bottom: 8px; margin-bottom: 16px;">Ключевые навыки</h2>
-            <p style="font-size: 14px; color: #334155; margin: 0; background: #f8fafc; padding: 16px; border-radius: 8px; border: 1px solid #e2e8f0; line-height: 1.7;">
-                Customer Support, Technical Support, Atlassian Jira, CRM Systems, AAA (Authentication, Authorization, Accounting), Account Management, Customer Account Monitoring, Английский язык (C1 Advanced), Деловое общение и переписка, Работа с большим объемом информации, Обучение и развитие.
-            </p>
-        </section>
-
-        <!-- Образование -->
-        <section>
-            <h2 style="font-size: 16px; font-weight: 700; color: #0f172a; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 2px solid #2563eb; padding-bottom: 8px; margin-bottom: 16px;">Образование</h2>
-            <div>
+            <!-- Мефодий -->
+            <div style="margin-bottom: 28px;">
                 <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
-                    <h3 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0;">Государственная полярная академия, Санкт-Петербург</h3>
-                    <span style="font-size: 13px; font-weight: 600; color: #64748b; background: #f1f5f9; padding: 2px 8px; border-radius: 4px;">2015</span>
+                    <h3 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0;">Администратор учебного центра, Руководитель отдела разработки гуманитарного направления</h3>
+                    <span style="font-size: 13px; font-weight: 600; color: #64748b; background: #f1f5f9; padding: 2px 8px; border-radius: 4px;">Сентябрь 2019 — Март 2020</span>
                 </div>
-                <div style="font-size: 14px; color: #475569; font-style: italic;">Филологический факультет · Русский язык и литература (Высшее)</div>
+                <div style="font-size: 14px; color: #475569; font-style: italic; margin-bottom: 8px;">Учебный центр «Мефодий»</div>
+                <ul style="margin: 0; padding-left: 18px; font-size: 14px; color: #334155;">
+                    <li style="margin-bottom: 6px;">Консультирование клиентов по услугам центра (подготовка к экзаменам, группы догоняющего формата, олимпиадная подготовка, профориентация).</li>
+                    <li style="margin-bottom: 6px;">Ведение соцсетей (SMM) и работа с негативом, формирование групп, составление расписания, работа с базой данных, ведение статистики.</li>
+                    <li style="margin-bottom: 6px;">Составление и редактура учебно-методических комплексов, разработка проверочных тестов.</li>
+                    <li style="margin-bottom: 6px;">Разработка комплексного сборника риторических упражнений и текстов-образцов.</li>
+                </ul>
             </div>
-        </section>
 
-    </main>
-</body>
-</html>
+            <!-- Доминанта -->
+            <div style="margin-bottom: 28px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
