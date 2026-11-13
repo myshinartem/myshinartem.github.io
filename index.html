@@ -3,187 +3,317 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Артем Мышин — Резюме</title>
+    <title>Артем Мышин — L1/L2 Support & Head of Support</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --text-color: #1f2937;
+            --text-light: #6b7280;
+            --bg-color: #ffffff;
+            --bg-secondary: #f9fafb;
+            --border-color: #e5e7eb;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-secondary);
+        }
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: var(--bg-color);
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+        }
+        .title {
+            font-size: 1.25rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .contacts {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+        .contacts a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .contacts a:hover {
+            color: var(--primary-color);
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        .stat-item {
+            background: var(--bg-secondary);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: block;
+        }
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+        section {
+            margin-bottom: 2.5rem;
+        }
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            border-left: 4px solid var(--primary-color);
+            padding-left: 0.75rem;
+        }
+        .summary {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--text-color);
+        }
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        .skill-tag {
+            background: #eff6ff;
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        .experience-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .experience-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 0.5rem;
+        }
+        .job-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+        .job-date {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+        .company {
+            font-size: 1rem;
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+        }
+        .job-description ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .job-description li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+        .job-description li::before {
+            content: "•";
+            color: var(--primary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        .education-item {
+            margin-bottom: 1.5rem;
+        }
+        .degree {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        .school {
+            color: var(--text-light);
+        }
+        @media (max-width: 640px) {
+            .container {
+                margin: 0;
+                border-radius: 0;
+                padding: 1.5rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .job-header {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
-<body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f1f5f9; color: #1e293b; margin: 0; padding: 40px 16px; line-height: 1.6;">
-
-    <main style="max-width: 820px; margin: 0 auto; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 12px; padding: 48px; box-sizing: border-box; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);">
-
-        <!-- Шапка -->
-        <header style="margin-bottom: 28px; padding-bottom: 24px; border-bottom: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: flex-start;">
-            <div>
-                <div style="font-size: 13px; font-weight: 700; color: #2563eb; letter-spacing: 0.08em; margin-bottom: 8px;">IT SUPPORT SPECIALIST · L1 / L2 · TECHNICAL SUPPORT & ANALYTICS</div>
-                <h1 style="font-size: 32px; font-weight: 800; color: #0f172a; margin: 0 0 8px 0;">Артем Мышин</h1>
-                <p style="font-size: 15px; color: #64748b; margin: 0;">Санкт-Петербург · Готов к удаленной работе</p>
-            </div>
-            <div style="width: 64px; height: 64px; border-radius: 50%; background: #2563eb; color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700; flex-shrink: 0;">
-                АМ
+<body>
+    <div class="container">
+        <header>
+            <h1>Артем Мышин</h1>
+            <div class="title">L1 / L2 Support | Head of Support | IT & Customer Success</div>
+            <div class="contacts">
+                <a href="mailto:pfvfhfirf@gmail.com">📧 pfvfhfirf@gmail.com</a>
+                <a href="https://t.me/IshuRabotuAgain">✈️ Telegram: @IshuRabotuAgain</a>
+                <a href="tel:+79214035696">📱 +7 (921) 403-56-96</a>
             </div>
         </header>
 
-        <!-- Контакты -->
-        <section style="background: #f8fafc; padding: 16px 20px; border-radius: 8px; margin-bottom: 28px; font-size: 14px; border: 1px solid #e2e8f0;">
-            <span style="font-weight: 600; color: #0f172a;">Контакты:</span> 
-            <span style="color: #cbd5e1; margin: 0 8px;">|</span>
-            Email: <a href="mailto:pfvfhfirf@gmail.com" style="color: #2563eb; text-decoration: none; font-weight: 500;">pfvfhfirf@gmail.com</a> 
-            <span style="color: #cbd5e1; margin: 0 8px;">|</span>
-            Telegram: <a href="https://t.me/IshuRabotuAgain" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 500;">@IshuRabotuAgain</a> 
-            <span style="color: #cbd5e1; margin: 0 8px;">|</span>
-            Тел: +7 (921) 403-56-96
-        </section>
+        <div class="stats">
+            <div class="stat-item">
+                <span class="stat-number">8+ лет</span>
+                <span class="stat-label">Опыт в саппорте и IT</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">7 000+</span>
+                <span class="stat-label">Клиентов на поддержке</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">English C1</span>
+                <span class="stat-label">Мультиязычный сервис</span>
+            </div>
+        </div>
 
-        <!-- Квадраты с метриками -->
-        <section style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-bottom: 28px;">
-            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; text-align: center;">
-                <span style="display: block; font-size: 20px; font-weight: 700; color: #2563eb; margin-bottom: 4px;">8+ лет</span>
-                <span style="font-size: 12px; color: #64748b; font-weight: 500;">Опыт в саппорте и IT</span>
-            </div>
-            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; text-align: center;">
-                <span style="display: block; font-size: 20px; font-weight: 700; color: #2563eb; margin-bottom: 4px;">7 000+</span>
-                <span style="font-size: 12px; color: #64748b; font-weight: 500;">Клиентов на поддержке</span>
-            </div>
-            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; text-align: center;">
-                <span style="display: block; font-size: 20px; font-weight: 700; color: #2563eb; margin-bottom: 4px;">English C1</span>
-                <span style="font-size: 12px; color: #64748b; font-weight: 500;">Мультиязычный сервис</span>
-            </div>
-            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; text-align: center;">
-                <span style="display: block; font-size: 20px; font-weight: 700; color: #2563eb; margin-bottom: 4px;">L1 / L2 Support</span>
-                <span style="font-size: 12px; color: #64748b; font-weight: 500;">Head of Support опыт</span>
-            </div>
-        </section>
-
-        <!-- Блок ИТ-навыков (Скиллы на видном месте) -->
-        <section style="margin-bottom: 32px;">
-            <h2 style="font-size: 14px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px;">Технический стек и ключевые навыки</h2>
-            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-                <span style="background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe; padding: 6px 12px; border-radius: 6px; font-size: 13px; font-weight: 600;">Technical Support (L1/L2)</span>
-                <span style="background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe; padding: 6px 12px; border-radius: 6px; font-size: 13px; font-weight: 600;">Atlassian Jira</span>
-                <span style="background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe; padding: 6px 12px; border-radius: 6px; font-size: 13px; font-weight: 600;">CRM Systems</span>
-                <span style="background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe; padding: 6px 12px; border-radius: 6px; font-size: 13px; font-weight: 600;">AAA (Auth & Accounting)</span>
-                <span style="background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe; padding: 6px 12px; border-radius: 6px; font-size: 13px; font-weight: 600;">Customer Support & Success</span>
-                <span style="background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; padding: 6px 12px; border-radius: 6px; font-size: 13px; font-weight: 500;">Английский язык (C1 Advanced)</span>
-                <span style="background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; padding: 6px 12px; border-radius: 6px; font-size: 13px; font-weight: 500;">Account Management</span>
-                <span style="background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; padding: 6px 12px; border-radius: 6px; font-size: 13px; font-weight: 500;">Деловая коммуникация</span>
-                <span style="background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; padding: 6px 12px; border-radius: 6px; font-size: 13px; font-weight: 500;">Работа с аналитикой и тикетами</span>
-            </div>
-        </section>
-
-        <!-- О себе (Акцент на IT-саппорт и понятные объяснения) -->
-        <section style="margin-bottom: 36px;">
-            <p style="font-size: 15px; color: #334155; margin: 0; line-height: 1.7;">
-                Специалист с 8+ годами опыта в технической поддержке (1-я и 2-я линии), клиентском сервисе и IT-проектах. Обладаю уникальным сочетанием сильного бэкграунда в коммуникации и технической экспертизы: умею профессионально работать с тикетами в Jira, диагностировать проблемы пользователей, настраивать оборудование/системы и предельно понятно объяснять сложные технические нюансы как клиентам, так и разработчикам. Имею практический опыт построения процессов саппорта с нуля и работы в мультиязычных командах (EN C1).
+        <section>
+            <h2>Обо мне</h2>
+            <p class="summary">
+                Специалист с 8+ годами опыта в технической поддержке (1-я и 2-я линии), клиентском сервисе и IT-проектах. 
+                Обладаю уникальным сочетанием сильного бэкграунда в коммуникации и технической экспертизы: умею профессионально 
+                работать с тикетами в Jira, диагностировать проблемы пользователей, настраивать оборудование/системы и предельно 
+                понятно объяснять сложные технические нюансы как клиентам, так и разработчикам. Имею практический опыт построения 
+                процессов саппорта с нуля и работы в мультиязычных командах (EN C1).
             </p>
         </section>
 
-        <!-- Опыт работы -->
-        <section style="margin-bottom: 40px;">
-            <h2 style="font-size: 16px; font-weight: 700; color: #0f172a; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 2px solid #2563eb; padding-bottom: 8px; margin-bottom: 24px;">Опыт работы</h2>
-
-            <!-- Тетрика -->
-            <div style="margin-bottom: 28px;">
-                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
-                    <h3 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0;">Преподаватель</h3>
-                    <span style="font-size: 13px; font-weight: 600; color: #64748b; background: #f1f5f9; padding: 2px 8px; border-radius: 4px;">Август 2024 — Наст. время</span>
-                </div>
-                <div style="font-size: 14px; color: #475569; font-style: italic; margin-bottom: 8px;">Онлайн-школа «Тетрика» · Москва</div>
-                <p style="font-size: 14px; color: #334155; margin: 0;">Фоновая работа, которой обеспечивал себя, пока пытался развиться как самостоятельный предприниматель и навайбкодить небольшую игру.</p>
-            </div>
-
-            <!-- Лидгид (Head of Support) -->
-            <div style="margin-bottom: 28px;">
-                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
-                    <h3 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0;">1-man Support (Head of Support / 1-я и 2-я линия)</h3>
-                    <span style="font-size: 13px; font-weight: 600; color: #64748b; background: #f1f5f9; padding: 2px 8px; border-radius: 4px;">Октябрь 2023 — Август 2024</span>
-                </div>
-                <div style="font-size: 14px; color: #475569; font-style: italic; margin-bottom: 8px;">Лидгид · Санкт-Петербург</div>
-                <ul style="margin: 0; padding-left: 18px; font-size: 14px; color: #334155;">
-                    <li style="margin-bottom: 6px;">Единолично обслуживал отдел support'а в компании на 70+ активных сотрудников и более 7 000 клиентов.</li>
-                    <li style="margin-bottom: 6px;">По сути выполнял обязанности Head of Support и непосредственно 1-й и 2-й линий поддержки (разбор инцидентов, эскалация багов).</li>
-                    <li style="margin-bottom: 6px;">Самостоятельно контролировал потоки входящих обращений через почту, CRM и другие каналы.</li>
-                    <li style="margin-bottom: 6px;">Обрабатывал заявки на 1-й линии либо привлекал IT-специалистов для 2-й линии.</li>
-                    <li style="margin-bottom: 6px;">Собирал аналитику по инцидентам и передавал отчетность в продуктовый и технический отделы.</li>
-                    <li style="margin-bottom: 6px;">Обеспечивал мультиязычную техподдержку (английский, французский, испанский, португальский).</li>
-                </ul>
-            </div>
-
-            <!-- Лидгид (Менеджер по регистрациям) -->
-            <div style="margin-bottom: 28px;">
-                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
-                    <h3 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0;">Саппорт, Менеджер по регистрациям</h3>
-                    <span style="font-size: 13px; font-weight: 600; color: #64748b; background: #f1f5f9; padding: 2px 8px; border-radius: 4px;">Август 2023 — Август 2024</span>
-                </div>
-                <div style="font-size: 14px; color: #475569; font-style: italic; margin-bottom: 8px;">Лидгид · Санкт-Петербург (cpa.leadgid.ru)</div>
-                <ul style="margin: 0; padding-left: 18px; font-size: 14px; color: #334155;">
-                    <li style="margin-bottom: 6px;">Решение технических и пользовательских кейсов на русском и иностранных языках в режиме 24/7.</li>
-                    <li style="margin-bottom: 6px;">Модерация пользовательских данных, анализ рисков и контроль доступа к платформе.</li>
-                    <li style="margin-bottom: 6px;">Онбординг новых пользователей и техническое сопровождение на старте.</li>
-                </ul>
-            </div>
-
-            <!-- Okko -->
-            <div style="margin-bottom: 28px;">
-                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
-                    <h3 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0;">Старший специалист по работе с клиентами</h3>
-                    <span style="font-size: 13px; font-weight: 600; color: #64748b; background: #f1f5f9; padding: 2px 8px; border-radius: 4px;">Декабрь 2021 — Август 2023</span>
-                </div>
-                <div style="font-size: 14px; color: #475569; font-style: italic; margin-bottom: 8px;">Okko · Санкт-Петербург (okko.tv)</div>
-                <ul style="margin: 0; padding-left: 18px; font-size: 14px; color: #334155;">
-                    <li style="margin-bottom: 6px;">Первая линия технической поддержки пользователей (чаты, почта, тикет-системы).</li>
-                    <li style="margin-bottom: 6px;">Диагностика сбоев клиентского ПО, помощь в решении сложных технических неполадок воспроизведения и авторизации.</li>
-                </ul>
-            </div>
-
-            <!-- Мефодий -->
-            <div style="margin-bottom: 28px;">
-                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
-                    <h3 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0;">Администратор учебного центра, Руководитель отдела разработки</h3>
-                    <span style="font-size: 13px; font-weight: 600; color: #64748b; background: #f1f5f9; padding: 2px 8px; border-radius: 4px;">Сентябрь 2019 — Март 2020</span>
-                </div>
-                <div style="font-size: 14px; color: #475569; font-style: italic; margin-bottom: 8px;">Учебный центр «Мефодий»</div>
-                <ul style="margin: 0; padding-left: 18px; font-size: 14px; color: #334155;">
-                    <li style="margin-bottom: 6px;">Консультирование клиентов, управление базами данных и внутренней статистикой.</li>
-                    <li style="margin-bottom: 6px;">Разработка структурированных методических материалов, инструкций и тестов.</li>
-                </ul>
-            </div>
-
-            <!-- Доминанта -->
-            <div style="margin-bottom: 28px;">
-                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
-                    <h3 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0;">Специалист отдела технической поддержки</h3>
-                    <span style="font-size: 13px; font-weight: 600; color: #64748b; background: #f1f5f9; padding: 2px 8px; border-radius: 4px;">Июнь 2018 — Октябрь 2018</span>
-                </div>
-                <div style="font-size: 14px; color: #475569; font-style: italic; margin-bottom: 8px;">Провайдер интернет и IPTV «Доминанта»</div>
-                <ul style="margin: 0; padding-left: 18px; font-size: 14px; color: #334155;">
-                    <li style="margin-bottom: 6px;">Удаленная диагностика сетевого оборудования, настройка роутеров, устранение неполок связи.</li>
-                    <li style="margin-bottom: 6px;">Регистрация и трекинг инцидентов в корпоративной системе учета заявок.</li>
-                </ul>
-            </div>
-
-            <!-- Школа знаний -->
-            <div style="margin-bottom: 28px;">
-                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
-                    <h3 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0;">Преподаватель / Разработчик учебных программ</h3>
-                    <span style="font-size: 13px; font-weight: 600; color: #64748b; background: #f1f5f9; padding: 2px 8px; border-radius: 4px;">Февраль 2016 — Май 2018</span>
-                </div>
-                <div style="font-size: 14px; color: #475569; font-style: italic; margin-bottom: 8px;">Учебный центр «Школа знаний»</div>
-                <ul style="margin: 0; padding-left: 18px; font-size: 14px; color: #334155;">
-                    <li style="margin-bottom: 6px;">Проведение занятий, четкое структурирование информации и развитие навыков эффективной коммуникации.</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Образование -->
         <section>
-            <h2 style="font-size: 16px; font-weight: 700; color: #0f172a; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 2px solid #2563eb; padding-bottom: 8px; margin-bottom: 16px;">Образование</h2>
-            <div>
-                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
-                    <h3 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0;">Государственная полярная академия, Санкт-Петербург</h3>
-                    <span style="font-size: 13px; font-weight: 600; color: #64748b; background: #f1f5f9; padding: 2px 8px; border-radius: 4px;">Высшее (2015)</span>
-                </div>
-                <div style="font-size: 14px; color: #475569; font-style: italic;">Филологический факультет · Русский язык и литература</div>
+            <h2>Ключевые навыки</h2>
+            <div class="skills-grid">
+                <span class="skill-tag">Technical Support (L1/L2)</span>
+                <span class="skill-tag">Atlassian Jira</span>
+                <span class="skill-tag">CRM Systems</span>
+                <span class="skill-tag">AAA (Auth & Accounting)</span>
+                <span class="skill-tag">Customer Support & Success</span>
+                <span class="skill-tag">English (C1 Advanced)</span>
+                <span class="skill-tag">Account Management</span>
+                <span class="skill-tag">Деловая коммуникация</span>
+                <span class="skill-tag">Аналитика и работа с тикетами</span>
             </div>
         </section>
 
-    </main>
+        <section>
+            <h2>Опыт работы</h2>
+            
+            <div class="experience-item">
+                <div class="job-header">
+                    <div class="job-title">Преподаватель</div>
+                    <div class="job-date">Август 2024 — Наст. время</div>
+                </div>
+                <div class="company">Онлайн-школа «Тетрика» · Москва</div>
+                <div class="job-description">
+                    <ul>
+                        <li>Фоновая работа, которой обеспечивал себя, пока пытался развиться как самостоятельный предприниматель и разрабатывал собственный IT-продукт.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div class="job-title">1-man Support (Head of Support / 1-я и 2-я линия)</div>
+                    <div class="job-date">Октябрь 2023 — Август 2024</div>
+                </div>
+                <div class="company">Лидгид · Санкт-Петербург</div>
+                <div class="job-description">
+                    <ul>
+                        <li>Единолично обслуживал отдел support'а в компании на 70+ активных сотрудников и более 7 000 клиентов.</li>
+                        <li>Выполнял обязанности Head of Support и непосредственно 1-й и 2-й линий поддержки (разбор инцидентов, эскалация багов).</li>
+                        <li>Самостоятельно контролировал потоки входящих обращений через почту, CRM и другие каналы.</li>
+                        <li>Обеспечивал мультиязычную техподдержку (английский, французский, испанский, португальский).</li>
+                        <li>Собирал аналитику по инцидентам и передавал отчетность в продуктовый и технический отделы.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div class="job-title">Старший специалист по работе с клиентами</div>
+                    <div class="job-date">Декабрь 2021 — Август 2023</div>
+                </div>
+                <div class="company">Okko · Санкт-Петербург</div>
+                <div class="job-description">
+                    <ul>
+                        <li>Первая линия технической поддержки пользователей (чаты, почта, тикет-системы).</li>
+                        <li>Диагностика сбоев клиентского ПО, помощь в решении сложных технических неполадок воспроизведения и авторизации.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div class="job-title">Специалист отдела технической поддержки</div>
+                    <div class="job-date">Июнь 2018 — Октябрь 2018</div>
+                </div>
+                <div class="company">Провайдер интернет и IPTV «Доминанта»</div>
+                <div class="job-description">
+                    <ul>
+                        <li>Удаленная диагностика сетевого оборудования, настройка роутеров, устранение неполадок связи.</li>
+                        <li>Регистрация и трекинг инцидентов в корпоративной системе учета заявок.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Образование</h2>
+            <div class="education-item">
+                <div class="degree">Высшее образование, Филологический факультет · Русский язык и литература</div>
+                <div class="school">Государственная полярная академия, Санкт-Петербург (2015)</div>
+            </div>
+        </section>
+    </div>
 </body>
 </html>
