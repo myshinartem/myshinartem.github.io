@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artem Myshin — L1/L2 Support & Customer Success</title>
+    <link rel="alternate" hreflang="ru" href="https://myshinartem.github.io/" />
+    <link rel="alternate" hreflang="en" href="https://myshinartem.github.io/en.html" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-soft: #eff6ff;
+            --text-main: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --bg-page: #f1f5f9;
+            --bg-card: #ffffff;
+            --border-soft: #e2e8f0;
+            --shadow-float: 0 20px 40px -12px rgba(15, 23, 42, 0.08);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.65;
+            color: var(--text-main);
+            background-color: var(--bg-page);
+            -webkit-font-smoothing: antialiased;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            border-radius: 24px;
+            box-shadow: var(--shadow-float);
+            border: 1px solid var(--border-soft);
+            overflow: hidden;
+            position: relative;
+        }
+        .header-block {
+            background: linear-gradient(to bottom, #f8fafc 0%, #ffffff 100%);
+            padding: 3.5rem 3rem 2.5rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border-soft);
+        }
+        .header-block::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), #60a5fa);
+        }
+        h1 { font-size: 2.5rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.5rem; letter-spacing: -0.03em; }
+        .title { font-size: 1.15rem; color: var(--primary); font-weight: 600; margin-bottom: 2rem; letter-spacing: -0.01em; }
+        .contacts { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.75rem; }
+        .contact-pill {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: var(--bg-page); color: var(--text-secondary);
+            text-decoration: none; font-size: 0.9rem; font-weight: 500;
+            padding: 0.6rem 1.2rem; border-radius: 99px;
+            border: 1px solid var(--border-soft);
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .contact-pill:hover { background: var(--primary-soft); color: var(--primary); border-color: var(--primary); transform: translateY(-2px); }
+        
+        .lang-switch { position: absolute; top: 1.5rem; right: 1.5rem; display: flex; gap: 0.5rem; }
+        .lang-btn {
+            padding: 0.4rem 0.8rem; border-radius: 8px; text-decoration: none;
+            font-size: 0.85rem; font-weight: 600; color: var(--text-muted);
+            background: transparent; border: 1px solid var(--border-soft);
+            transition: all 0.2s ease;
+        }
+        .lang-btn.active { background: var(--primary); color: #ffffff; border-color: var(--primary); }
+        .lang-btn:hover:not(.active) { background: var(--bg-page); color: var(--text-main); }
+
+        .content { padding: 3rem; }
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 3rem; }
+        .stat-item {
+            background: var(--bg-page); padding: 1.5rem 1rem; border-radius: 16px;
+            text-align: center; border: 1px solid transparent; transition: all 0.3s ease;
+        }
+        .stat-item:hover { background: #ffffff; border-color: var(--border-soft); transform: translateY(-3px); box-shadow: 0 8px 24px -8px rgba(0,0,0,0.08); }
+        .stat-number { font-size: 1.75rem; font-weight: 800; color: var(--primary); display: block; margin-bottom: 0.25rem; }
+        .stat-label { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; line-height: 1.4; }
+        
+        section { margin-bottom: 3rem; }
+        section:last-child { margin-bottom: 0; }
+        h2 {
+            font-size: 1.25rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--text-main);
+            display: flex; align-items: center; gap: 0.75rem; letter-spacing: -0.01em;
+        }
+        h2::before {
+            content: ""; display: block; width: 8px; height: 8px;
+            background: var(--primary); border-radius: 50%;
+            box-shadow: 0 0 0 4px var(--primary-soft);
+        }
+        .summary {
+            font-size: 1.05rem; line-height: 1.7; color: var(--text-secondary);
+            background: var(--bg-page); padding: 1.5rem; border-radius: 16px;
+            border-left: 4px solid var(--primary);
+        }
+        .skills-grid { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+        .skill-tag {
+            background: #ffffff; color: var(--text-main); padding: 0.5rem 1rem;
+            border-radius: 8px; font-size: 0.9rem; font-weight: 500;
+            border: 1px solid var(--border-soft); transition: all 0.2s ease;
+        }
+        .skill-tag:hover { border-color: var(--primary); color: var(--primary); background: var(--primary-soft); }
+        
+        .experience-item { margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border-soft); }
+        .experience-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+        .job-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem; }
+        .job-title { font-size: 1.1rem; font-weight: 700; color: var(--text-main); }
+        .job-date { font-size: 0.85rem; color: var(--text-muted); font-weight: 600; background: var(--bg-page); padding: 0.25rem 0.75rem; border-radius: 6px; }
+        .company { font-size: 0.95rem; color: var(--primary); font-weight: 600; margin-bottom: 1rem; }
+        .job-description ul { list-style-type: none; padding-left: 0; }
+        .job-description li {
+            position: relative; padding-left: 1.5rem; margin-bottom: 0.6rem;
+            color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;
+        }
+        .job-description li::before {
+            content: "•"; color: var(--primary); font-weight: bold;
+            position: absolute; left: 0; font-size: 1.2rem; line-height: 1.4;
+        }
+        .education-item { padding: 1.5rem; background: var(--bg-page); border-radius: 16px; }
+        .degree { font-weight: 700; font-size: 1.05rem; color: var(--text-main); margin-bottom: 0.25rem; }
+        .school { color: var(--text-muted); font-size: 0.95rem; }
+        
+        @media (max-width: 640px) {
+            body { padding: 0; background: var(--bg-card); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header-block { padding: 2.5rem 1.5rem 2rem; }
+            .content { padding: 1.5rem; }
+            h1 { font-size: 2rem; }
+            .job-header { flex-direction: column; gap: 0.25rem; }
+            .lang-switch { position: static; justify-content: center; margin-bottom: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-block">
+            <div class="lang-switch">
+                <a href="index.html" class="lang-btn">RU</a>
+                <a href="en.html" class="lang-btn active">EN</a>
+            </div>
+            <h1>Artem Myshin</h1>
+            <div class="title">L1 / L2 Support | Full-Cycle Specialist | Customer Success</div>
+            <div class="contacts">
+                <a href="mailto:pfvfhfirf@gmail.com" class="contact-pill">📧 pfvfhfirf@gmail.com</a>
+                <a href="https://t.me/IshuRabotuAgain" class="contact-pill">✈️ Telegram</a>
+                <a href="tel:+79214035696" class="contact-pill">📱 +7 (921) 403-56-96</a>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number">8+ years</span>
+                    <span class="stat-label">Experience in IT & Support</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">7,000+</span>
+                    <span class="stat-label">Supported Clients</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">English C1</span>
+                    <span class="stat-label">Multilingual Support</span>
+                </div>
+            </div>
+
+            <section>
+                <h2>About Me</h2>
+                <p class="summary">
+                    Specialist with 8+ years of experience in technical support (L1/L2), customer service, and IT projects. 
+                    I possess a unique combination of an <strong>analytical mindset</strong> and <strong>exceptional communication skills</strong> (thanks to my pedagogical background): 
+                    I professionally handle tickets in Jira, diagnose issues, configure systems, and clearly explain complex technical 
+                    nuances to both clients and developers. I have practical experience building support processes from scratch, 
+                    data moderation, and working in multilingual teams.
+                </p>
+            </section>
+
+            <section>
+                <h2>Key Skills</h2>
+                <div class="skills-grid">
+                    <span class="skill-tag">Technical Support (L1/L2)</span>
+                    <span class="skill-tag">Atlassian Jira</span>
+                    <span class="skill-tag">CRM Systems</span>
+                    <span class="skill-tag">AAA (Auth & Accounting)</span>
+                    <span class="skill-tag">Customer Support & Success</span>
+                    <span class="skill-tag">English (C1 Advanced)</span>
+                    <span class="skill-tag">Account Management</span>
+                    <span class="skill-tag">Business Communication</span>
+                    <span class="skill-tag">Analytics & Ticket Management</span>
+                </div>
+            </section>
+
+            <section>
+                <h2>Work Experience</h2>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="job-title">Full-Cycle Technical Support Specialist (L1/L2)</div>
+                        <div class="job-date">Oct 2023 — Aug 2024</div>
+                    </div>
+                    <div class="company">Leadgid · St. Petersburg</div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Solo built and maintained the technical support process for 70+ internal employees and 7,000+ external clients.</li>
+                            <li>Handled the full cycle of requests: from initial diagnostics and L1 issue resolution to complex escalation and collaboration with the IT department (L2).</li>
+                            <li>Independently managed all communication channels (email, CRM, messengers), providing multilingual support (English, French, Spanish, Portuguese).</li>
+                            <li>Collected and structured incident analytics, delivering systematic reports to product and marketing teams to improve service quality.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="job-title">Support & Moderation Specialist</div>
+                        <div class="job-date">Aug 2023 — Aug 2024</div>
+                    </div>
+                    <div class="company">Leadgid (cpa.leadgid.ru) · St. Petersburg</div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Prompt resolution of technical and user cases in Russian and foreign languages 24/7.</li>
+                            <li>Moderation of new user registrations: risk assessment, data analysis, and platform access control.</li>
+                            <li>Onboarding new clients and providing technical guidance at the start of their work with the platform.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="job-title">Senior Customer Service Specialist</div>
+                        <div class="job-date">Dec 2021 — Aug 2023</div>
+                    </div>
+                    <div class="company">Okko (okko.tv) · St. Petersburg</div>
+                    <div class="job-description">
+                        <ul>
+                            <li>L1 technical support for users (chats, email, ticketing systems).</li>
+                            <li>Diagnostics of client software failures, assistance with complex technical issues related to playback and authorization.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="job-title">Training Center Administrator / Department Head</div>
+                        <div class="job-date">Sep 2019 — Mar 2020</div>
+                    </div>
+                    <div class="company">Mefodiy Training Center</div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Managed the full learning cycle: client consulting, group formation, scheduling, and career guidance.</li>
+                            <li>Worked with databases, maintained statistics and SMM, including professional handling of negative feedback and client retention.</li>
+                            <li>Developed and edited educational and methodological materials, created tests for group and individual classes.</li>
+                            <li>Developed comprehensive collections of rhetorical exercises to develop students' public speaking and communication skills.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="job-title">Technical Support Specialist</div>
+                        <div class="job-date">Jun 2018 — Oct 2018</div>
+                    </div>
+                    <div class="company">Dominanta Internet & IPTV Provider</div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Remote diagnostics of network equipment, router configuration, resolving connection issues.</li>
+                            <li>Registering and tracking incidents in the corporate ticketing system.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="job-title">Teacher</div>
+                        <div class="job-date">Aug 2024 — Present</div>
+                    </div>
+                    <div class="company">Tetrika Online School · Moscow</div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Part-time role that allows me to maintain teaching skills while developing new competencies.</li>
+                            <li>Active exploration and application of AI tools and Large Language Models (LLMs) in the educational process.</li>
+                            <li>Currently seeking a more substantial and long-term project for professional growth.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </section>
+
+            <section>
+                <h2>Education</h2>
+                <div class="education-item">
+                    <div class="degree">Bachelor's Degree, Faculty of Philology · Russian Language and Literature</div>
+                    <div class="school">State Polar Academy, St. Petersburg (2015)</div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
