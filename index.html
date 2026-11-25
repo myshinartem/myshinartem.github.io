@@ -79,7 +79,16 @@
         }
         .lang-btn.active { background: var(--primary); color: #0d1421; border-color: var(--primary); }
         .lang-btn:hover:not(.active) { color: var(--text-main); border-color: var(--text-muted); }
-
+        .lang-btn.pdf {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+        .lang-btn.pdf:hover {
+            color: var(--text-main);
+            border-color: var(--primary);
+            background: var(--primary-soft);
+        }
         .content { padding: 2.75rem 3rem; }
         .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.75rem; margin-bottom: 2.75rem; }
         .stat-item {
