@@ -136,6 +136,40 @@
             .job-header { flex-direction: column; gap: 0.25rem; }
             .lang-switch { position: static; justify-content: center; margin-bottom: 1.5rem; }
         }
+                .lang-switch {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            display: flex;
+            gap: 0.5rem;
+        }
+        .lang-btn {
+            padding: 0.4rem 0.8rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            background: transparent;
+            border: 1px solid var(--border-soft);
+            transition: all 0.2s ease;
+        }
+        .lang-btn.active {
+            background: var(--primary);
+            color: #ffffff;
+            border-color: var(--primary);
+        }
+        .lang-btn:hover:not(.active) {
+            background: var(--bg-page);
+            color: var(--text-main);
+        }
+        @media (max-width: 640px) {
+            .lang-switch {
+                position: static;
+                justify-content: center;
+                margin-bottom: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
