@@ -9,15 +9,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #2563eb;
-            --primary-soft: #eff6ff;
-            --text-main: #0f172a;
-            --text-secondary: #475569;
-            --text-muted: #64748b;
-            --bg-page: #f1f5f9;
-            --bg-card: #ffffff;
-            --border-soft: #e2e8f0;
-            --shadow-float: 0 20px 40px -12px rgba(15, 23, 42, 0.08);
+            --primary: #6b93d6;
+            --primary-soft: rgba(107, 147, 214, 0.12);
+            --text-main: #e6ebf2;
+            --text-secondary: #b6c2d1;
+            --text-muted: #8a97a8;
+            --bg-page: #0d1421;
+            --bg-card: #161f2e;
+            --bg-inset: #1b2536;
+            --border-soft: #2a3648;
+            --shadow-float: 0 18px 40px -16px rgba(0, 0, 0, 0.55);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -32,14 +33,14 @@
             max-width: 800px;
             margin: 0 auto;
             background: var(--bg-card);
-            border-radius: 24px;
+            border-radius: 14px;
             box-shadow: var(--shadow-float);
             border: 1px solid var(--border-soft);
             overflow: hidden;
             position: relative;
         }
         .header-block {
-            background: linear-gradient(to bottom, #f8fafc 0%, #ffffff 100%);
+            background: var(--bg-inset);
             padding: 3.5rem 3rem 2.5rem;
             text-align: center;
             border-bottom: 1px solid var(--border-soft);
@@ -49,105 +50,96 @@
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), #60a5fa);
+            height: 2px;
+            background: var(--primary);
+            opacity: 0.7;
         }
-        h1 { font-size: 2.5rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.5rem; letter-spacing: -0.03em; }
-        .title { font-size: 1.15rem; color: var(--primary); font-weight: 600; margin-bottom: 2rem; letter-spacing: -0.01em; }
-        .contacts { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.75rem; }
+        h1 { font-size: 2.4rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.5rem; letter-spacing: -0.02em; }
+        .title { font-size: 1.1rem; color: var(--primary); font-weight: 600; margin-bottom: 2rem; letter-spacing: 0.01em; }
+        .contacts { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.6rem; }
         .contact-pill {
             display: inline-flex; align-items: center; gap: 0.5rem;
-            background: var(--bg-page); color: var(--text-secondary);
-            text-decoration: none; font-size: 0.9rem; font-weight: 500;
-            padding: 0.6rem 1.2rem; border-radius: 99px;
-            border: 1px solid var(--border-soft);
-            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .contact-pill:hover { background: var(--primary-soft); color: var(--primary); border-color: var(--primary); transform: translateY(-2px); }
-
-        .lang-switch {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            display: flex;
-            gap: 0.5rem;
-            z-index: 2;
-        }
-        .lang-btn {
-            padding: 0.4rem 0.8rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--text-muted);
-            background: transparent;
+            background: var(--bg-card); color: var(--text-secondary);
+            text-decoration: none; font-size: 0.88rem; font-weight: 500;
+            padding: 0.55rem 1.1rem; border-radius: 8px;
             border: 1px solid var(--border-soft);
             transition: all 0.2s ease;
         }
-        .lang-btn.active { background: var(--primary); color: #ffffff; border-color: var(--primary); }
-        .lang-btn:hover:not(.active) { background: var(--bg-page); color: var(--text-main); }
+        .contact-pill:hover { color: var(--text-main); border-color: var(--primary); }
 
-        .content { padding: 3rem; }
-        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 3rem; }
-        .stat-item {
-            background: var(--bg-page); padding: 1.5rem 1rem; border-radius: 16px;
-            text-align: center; border: 1px solid transparent; transition: all 0.3s ease;
+        .lang-switch {
+            position: absolute; top: 1.25rem; right: 1.25rem;
+            display: flex; gap: 0.4rem; z-index: 2;
         }
-        .stat-item:hover { background: #ffffff; border-color: var(--border-soft); transform: translateY(-3px); box-shadow: 0 8px 24px -8px rgba(0,0,0,0.08); }
-        .stat-number { font-size: 1.75rem; font-weight: 800; color: var(--primary); display: block; margin-bottom: 0.25rem; }
-        .stat-label { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; line-height: 1.4; }
+        .lang-btn {
+            padding: 0.35rem 0.75rem; border-radius: 6px; text-decoration: none;
+            font-size: 0.8rem; font-weight: 600; color: var(--text-muted);
+            background: transparent; border: 1px solid var(--border-soft);
+            transition: all 0.2s ease;
+        }
+        .lang-btn.active { background: var(--primary); color: #0d1421; border-color: var(--primary); }
+        .lang-btn:hover:not(.active) { color: var(--text-main); border-color: var(--text-muted); }
 
-        section { margin-bottom: 3rem; }
+        .content { padding: 2.75rem 3rem; }
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.75rem; margin-bottom: 2.75rem; }
+        .stat-item {
+            background: var(--bg-inset); padding: 1.25rem 1rem; border-radius: 10px;
+            text-align: center; border: 1px solid var(--border-soft);
+        }
+        .stat-number { font-size: 1.6rem; font-weight: 700; color: var(--primary); display: block; margin-bottom: 0.25rem; }
+        .stat-label { font-size: 0.82rem; color: var(--text-muted); font-weight: 500; line-height: 1.4; }
+
+        section { margin-bottom: 2.75rem; }
         section:last-child { margin-bottom: 0; }
         h2 {
-            font-size: 1.25rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--text-main);
-            display: flex; align-items: center; gap: 0.75rem; letter-spacing: -0.01em;
+            font-size: 1.2rem; font-weight: 700; margin-bottom: 1.4rem; color: var(--text-main);
+            display: flex; align-items: center; gap: 0.7rem; letter-spacing: -0.01em;
         }
         h2::before {
-            content: ""; display: block; width: 8px; height: 8px;
-            background: var(--primary); border-radius: 50%;
-            box-shadow: 0 0 0 4px var(--primary-soft);
+            content: ""; display: block; width: 3px; height: 16px;
+            background: var(--primary); border-radius: 2px;
         }
         .summary {
-            font-size: 1.05rem; line-height: 1.7; color: var(--text-secondary);
-            background: var(--bg-page); padding: 1.5rem; border-radius: 16px;
-            border-left: 4px solid var(--primary);
+            font-size: 1rem; line-height: 1.7; color: var(--text-secondary);
+            background: var(--bg-inset); padding: 1.4rem; border-radius: 10px;
+            border-left: 3px solid var(--primary);
         }
-        .skills-grid { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+        .summary strong { color: var(--text-main); font-weight: 600; }
+        .skills-grid { display: flex; flex-wrap: wrap; gap: 0.5rem; }
         .skill-tag {
-            background: #ffffff; color: var(--text-main); padding: 0.5rem 1rem;
-            border-radius: 8px; font-size: 0.9rem; font-weight: 500;
+            background: var(--bg-inset); color: var(--text-secondary); padding: 0.45rem 0.9rem;
+            border-radius: 6px; font-size: 0.88rem; font-weight: 500;
             border: 1px solid var(--border-soft); transition: all 0.2s ease;
         }
-        .skill-tag:hover { border-color: var(--primary); color: var(--primary); background: var(--primary-soft); }
+        .skill-tag:hover { border-color: var(--primary); color: var(--text-main); }
 
-        .experience-item { margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border-soft); }
+        .experience-item { margin-bottom: 1.75rem; padding-bottom: 1.75rem; border-bottom: 1px solid var(--border-soft); }
         .experience-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
-        .job-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem; }
-        .job-title { font-size: 1.1rem; font-weight: 700; color: var(--text-main); }
-        .job-date { font-size: 0.85rem; color: var(--text-muted); font-weight: 600; background: var(--bg-page); padding: 0.25rem 0.75rem; border-radius: 6px; }
-        .company { font-size: 0.95rem; color: var(--primary); font-weight: 600; margin-bottom: 1rem; }
+        .job-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.4rem; }
+        .job-title { font-size: 1.05rem; font-weight: 700; color: var(--text-main); }
+        .job-date { font-size: 0.82rem; color: var(--text-muted); font-weight: 600; background: var(--bg-inset); padding: 0.2rem 0.7rem; border-radius: 6px; border: 1px solid var(--border-soft); }
+        .company { font-size: 0.92rem; color: var(--primary); font-weight: 600; margin-bottom: 0.9rem; }
         .job-description ul { list-style-type: none; padding-left: 0; }
         .job-description li {
-            position: relative; padding-left: 1.5rem; margin-bottom: 0.6rem;
-            color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;
+            position: relative; padding-left: 1.4rem; margin-bottom: 0.55rem;
+            color: var(--text-secondary); font-size: 0.93rem; line-height: 1.6;
         }
         .job-description li::before {
-            content: "•"; color: var(--primary); font-weight: bold;
-            position: absolute; left: 0; font-size: 1.2rem; line-height: 1.4;
+            content: "–"; color: var(--primary); font-weight: bold;
+            position: absolute; left: 0;
         }
-        .education-item { padding: 1.5rem; background: var(--bg-page); border-radius: 16px; }
-        .degree { font-weight: 700; font-size: 1.05rem; color: var(--text-main); margin-bottom: 0.25rem; }
-        .school { color: var(--text-muted); font-size: 0.95rem; }
+        .education-item { padding: 1.4rem; background: var(--bg-inset); border-radius: 10px; border: 1px solid var(--border-soft); }
+        .degree { font-weight: 600; font-size: 1rem; color: var(--text-main); margin-bottom: 0.25rem; }
+        .school { color: var(--text-muted); font-size: 0.92rem; }
 
         @media (max-width: 640px) {
-            body { padding: 0; background: var(--bg-card); }
-            .container { border-radius: 0; border: none; box-shadow: none; }
+            body { padding: 0; }
+            .container { border-radius: 0; border-left: none; border-right: none; box-shadow: none; }
             .header-block { padding: 2.5rem 1.5rem 2rem; }
-            .content { padding: 1.5rem; }
-            h1 { font-size: 2rem; }
+            .content { padding: 1.75rem 1.5rem; }
+            h1 { font-size: 1.9rem; }
             .job-header { flex-direction: column; gap: 0.25rem; }
-            .lang-switch { position: static; justify-content: center; margin-bottom: 1.5rem; }
+            .lang-switch { position: static; justify-content: center; margin-bottom: 1.25rem; }
         }
     </style>
 </head>
