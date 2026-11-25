@@ -72,4 +72,234 @@
             transition: all 0.2s ease;
         }
         .lang-btn.active { background: var(--primary); color: #ffffff; border-color: var(--primary); }
-        .lang-btn:hover:not(.
+        .lang-btn:hover:not(.active) { background: var(--bg-page); color: var(--text-main); }
+
+        .content { padding: 3rem; }
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 3rem; }
+        .stat-item {
+            background: var(--bg-page); padding: 1.5rem 1rem; border-radius: 16px;
+            text-align: center; border: 1px solid transparent; transition: all 0.3s ease;
+        }
+        .stat-item:hover { background: #ffffff; border-color: var(--border-soft); transform: translateY(-3px); box-shadow: 0 8px 24px -8px rgba(0,0,0,0.08); }
+        .stat-number { font-size: 1.75rem; font-weight: 800; color: var(--primary); display: block; margin-bottom: 0.25rem; }
+        .stat-label { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; line-height: 1.4; }
+        
+        section { margin-bottom: 3rem; }
+        section:last-child { margin-bottom: 0; }
+        h2 {
+            font-size: 1.25rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--text-main);
+            display: flex; align-items: center; gap: 0.75rem; letter-spacing: -0.01em;
+        }
+        h2::before {
+            content: ""; display: block; width: 8px; height: 8px;
+            background: var(--primary); border-radius: 50%;
+            box-shadow: 0 0 0 4px var(--primary-soft);
+        }
+        .summary {
+            font-size: 1.05rem; line-height: 1.7; color: var(--text-secondary);
+            background: var(--bg-page); padding: 1.5rem; border-radius: 16px;
+            border-left: 4px solid var(--primary);
+        }
+        .skills-grid { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+        .skill-tag {
+            background: #ffffff; color: var(--text-main); padding: 0.5rem 1rem;
+            border-radius: 8px; font-size: 0.9rem; font-weight: 500;
+            border: 1px solid var(--border-soft); transition: all 0.2s ease;
+        }
+        .skill-tag:hover { border-color: var(--primary); color: var(--primary); background: var(--primary-soft); }
+        
+        .experience-item { margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border-soft); }
+        .experience-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+        .job-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem; }
+        .job-title { font-size: 1.1rem; font-weight: 700; color: var(--text-main); }
+        .job-date { font-size: 0.85rem; color: var(--text-muted); font-weight: 600; background: var(--bg-page); padding: 0.25rem 0.75rem; border-radius: 6px; }
+        .company { font-size: 0.95rem; color: var(--primary); font-weight: 600; margin-bottom: 1rem; }
+        .job-description ul { list-style-type: none; padding-left: 0; }
+        .job-description li {
+            position: relative; padding-left: 1.5rem; margin-bottom: 0.6rem;
+            color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;
+        }
+        .job-description li::before {
+            content: "•"; color: var(--primary); font-weight: bold;
+            position: absolute; left: 0; font-size: 1.2rem; line-height: 1.4;
+        }
+        .education-item { padding: 1.5rem; background: var(--bg-page); border-radius: 16px; }
+        .degree { font-weight: 700; font-size: 1.05rem; color: var(--text-main); margin-bottom: 0.25rem; }
+        .school { color: var(--text-muted); font-size: 0.95rem; }
+        
+        @media (max-width: 640px) {
+            body { padding: 0; background: var(--bg-card); }
+            .container { border-radius: 0; border: none; box-shadow: none; }
+            .header-block { padding: 2.5rem 1.5rem 2rem; }
+            .content { padding: 1.5rem; }
+            h1 { font-size: 2rem; }
+            .job-header { flex-direction: column; gap: 0.25rem; }
+            .lang-switch { position: static; justify-content: center; margin-bottom: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-block">
+            <div class="lang-switch">
+                <a href="index.html" class="lang-btn active">RU</a>
+                <a href="en.html" class="lang-btn">EN</a>
+            </div>
+            <h1>Артем Мышин</h1>
+            <div class="title">L1 / L2 Support | Head of Support | IT & Customer Success</div>
+            <div class="contacts">
+                <a href="mailto:pfvfhfirf@gmail.com" class="contact-pill">📧 pfvfhfirf@gmail.com</a>
+                <a href="https://t.me/IshuRabotuAgain" class="contact-pill">✈️ Telegram</a>
+                <a href="tel:+79214035696" class="contact-pill">📱 +7 (921) 403-56-96</a>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number">8+ лет</span>
+                    <span class="stat-label">Опыт в саппорте и IT</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">7 000+</span>
+                    <span class="stat-label">Клиентов на поддержке</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">English C1</span>
+                    <span class="stat-label">Мультиязычный сервис</span>
+                </div>
+            </div>
+
+            <section>
+                <h2>Обо мне</h2>
+                <p class="summary">
+                    Специалист с 8+ годами опыта в технической поддержке (1-я и 2-я линии), клиентском сервисе и IT-проектах. 
+                    Обладаю уникальным сочетанием <strong>аналитического склада ума</strong> и <strong>безупречных речевых компетенций</strong> (благодаря педагогическому бэкграунду): 
+                    умею профессионально работать с тикетами в Jira, диагностировать проблемы, настраивать системы и предельно ясно, 
+                    структурированно объяснять сложные технические нюансы как клиентам, так и разработчикам. Имею практический опыт 
+                    построения процессов саппорта с нуля, модерации данных и работы в мультиязычных командах.
+                </p>
+            </section>
+
+            <section>
+                <h2>Ключевые навыки</h2>
+                <div class="skills-grid">
+                    <span class="skill-tag">Technical Support (L1/L2)</span>
+                    <span class="skill-tag">Atlassian Jira</span>
+                    <span class="skill-tag">CRM Systems</span>
+                    <span class="skill-tag">AAA (Auth & Accounting)</span>
+                    <span class="skill-tag">Customer Support & Success</span>
+                    <span class="skill-tag">English (C1 Advanced)</span>
+                    <span class="skill-tag">Account Management</span>
+                    <span class="skill-tag">Деловая коммуникация</span>
+                    <span class="skill-tag">Аналитика и работа с тикетами</span>
+                </div>
+            </section>
+
+            <section>
+                <h2>Опыт работы</h2>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="job-title">1-man Support (Head of Support / 1-я и 2-я линия)</div>
+                        <div class="job-date">Октябрь 2023 — Август 2024</div>
+                    </div>
+                    <div class="company">Лидгид · Санкт-Петербург</div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Единолично обслуживал отдел support'а в компании на 70+ активных сотрудников и более 7 000 клиентов.</li>
+                            <li>Выполнял обязанности Head of Support и непосредственно 1-й и 2-й линий поддержки (разбор инцидентов, эскалация багов).</li>
+                            <li>Самостоятельно контролировал потоки входящих обращений через почту, CRM и другие каналы.</li>
+                            <li>Обеспечивал мультиязычную техподдержку (английский, французский, испанский, португальский).</li>
+                            <li>Собирал аналитику по инцидентам и передавал отчетность в продуктовый и технический отделы.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="job-title">Саппорт, Менеджер по регистрациям</div>
+                        <div class="job-date">Август 2023 — Август 2024</div>
+                    </div>
+                    <div class="company">Лидгид (cpa.leadgid.ru) · Санкт-Петербург</div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Решение технических и пользовательских кейсов на русском и иностранных языках в режиме 24/7.</li>
+                            <li>Модерация пользовательских данных, анализ рисков и контроль доступа к платформе.</li>
+                            <li>Онбординг новых пользователей и техническое сопровождение на старте.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="job-title">Старший специалист по работе с клиентами</div>
+                        <div class="job-date">Декабрь 2021 — Август 2023</div>
+                    </div>
+                    <div class="company">Okko (okko.tv) · Санкт-Петербург</div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Первая линия технической поддержки пользователей (чаты, почта, тикет-системы).</li>
+                            <li>Диагностика сбоев клиентского ПО, помощь в решении сложных технических неполадок воспроизведения и авторизации.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="job-title">Администратор учебного центра / Руководитель отдела разработки</div>
+                        <div class="job-date">Сентябрь 2019 — Март 2020</div>
+                    </div>
+                    <div class="company">Учебный центр «Мефодий»</div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Управление полным циклом обучения: консультирование клиентов, формирование групп, составление расписания и профориентация.</li>
+                            <li>Работа с базами данных, ведение статистики и SMM, включая профессиональную отработку негатива и удержание клиентов.</li>
+                            <li>Разработка и редактура учебно-методических комплексов, создание проверочных тестов для групповых и индивидуальных занятий.</li>
+                            <li>Разработка комплексных сборников риторических упражнений для развития ораторских и речевых компетенций обучающихся.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="job-title">Специалист отдела технической поддержки</div>
+                        <div class="job-date">Июнь 2018 — Октябрь 2018</div>
+                    </div>
+                    <div class="company">Провайдер интернет и IPTV «Доминанта»</div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Удаленная диагностика сетевого оборудования, настройка роутеров, устранение неполадок связи.</li>
+                            <li>Регистрация и трекинг инцидентов в корпоративной системе учета заявок.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="job-title">Преподаватель</div>
+                        <div class="job-date">Август 2024 — Наст. время</div>
+                    </div>
+                    <div class="company">Онлайн-школа «Тетрика» · Москва</div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Подработка, позволяющая поддерживать педагогические навыки и параллельно развивать новые компетенции.</li>
+                            <li>Активное изучение и применение инструментов искусственного интеллекта (ИИ) и больших языковых моделей (LLM) в образовательном процессе.</li>
+                            <li>В данный момент нахожусь в поиске более основательного и фундаментального проекта для долгосрочного развития.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </section>
+
+            <section>
+                <h2>Образование</h2>
+                <div class="education-item">
+                    <div class="degree">Высшее образование, Филологический факультет · Русский язык и литература</div>
+                    <div class="school">Государственная полярная академия, Санкт-Петербург (2015)</div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
