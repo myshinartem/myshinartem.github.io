@@ -43,6 +43,7 @@
             padding: 3.5rem 3rem 2.5rem;
             text-align: center;
             border-bottom: 1px solid var(--border-soft);
+            position: relative;
         }
         .header-block::after {
             content: '';
@@ -63,12 +64,24 @@
             transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .contact-pill:hover { background: var(--primary-soft); color: var(--primary); border-color: var(--primary); transform: translateY(-2px); }
-        
-        .lang-switch { position: absolute; top: 1.5rem; right: 1.5rem; display: flex; gap: 0.5rem; }
+
+        .lang-switch {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            display: flex;
+            gap: 0.5rem;
+            z-index: 2;
+        }
         .lang-btn {
-            padding: 0.4rem 0.8rem; border-radius: 8px; text-decoration: none;
-            font-size: 0.85rem; font-weight: 600; color: var(--text-muted);
-            background: transparent; border: 1px solid var(--border-soft);
+            padding: 0.4rem 0.8rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            background: transparent;
+            border: 1px solid var(--border-soft);
             transition: all 0.2s ease;
         }
         .lang-btn.active { background: var(--primary); color: #ffffff; border-color: var(--primary); }
@@ -83,7 +96,7 @@
         .stat-item:hover { background: #ffffff; border-color: var(--border-soft); transform: translateY(-3px); box-shadow: 0 8px 24px -8px rgba(0,0,0,0.08); }
         .stat-number { font-size: 1.75rem; font-weight: 800; color: var(--primary); display: block; margin-bottom: 0.25rem; }
         .stat-label { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; line-height: 1.4; }
-        
+
         section { margin-bottom: 3rem; }
         section:last-child { margin-bottom: 0; }
         h2 {
@@ -107,7 +120,7 @@
             border: 1px solid var(--border-soft); transition: all 0.2s ease;
         }
         .skill-tag:hover { border-color: var(--primary); color: var(--primary); background: var(--primary-soft); }
-        
+
         .experience-item { margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border-soft); }
         .experience-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
         .job-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem; }
@@ -126,7 +139,7 @@
         .education-item { padding: 1.5rem; background: var(--bg-page); border-radius: 16px; }
         .degree { font-weight: 700; font-size: 1.05rem; color: var(--text-main); margin-bottom: 0.25rem; }
         .school { color: var(--text-muted); font-size: 0.95rem; }
-        
+
         @media (max-width: 640px) {
             body { padding: 0; background: var(--bg-card); }
             .container { border-radius: 0; border: none; box-shadow: none; }
@@ -135,40 +148,6 @@
             h1 { font-size: 2rem; }
             .job-header { flex-direction: column; gap: 0.25rem; }
             .lang-switch { position: static; justify-content: center; margin-bottom: 1.5rem; }
-        }
-                .lang-switch {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            display: flex;
-            gap: 0.5rem;
-        }
-        .lang-btn {
-            padding: 0.4rem 0.8rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--text-muted);
-            background: transparent;
-            border: 1px solid var(--border-soft);
-            transition: all 0.2s ease;
-        }
-        .lang-btn.active {
-            background: var(--primary);
-            color: #ffffff;
-            border-color: var(--primary);
-        }
-        .lang-btn:hover:not(.active) {
-            background: var(--bg-page);
-            color: var(--text-main);
-        }
-        @media (max-width: 640px) {
-            .lang-switch {
-                position: static;
-                justify-content: center;
-                margin-bottom: 1.5rem;
-            }
         }
     </style>
 </head>
@@ -207,10 +186,10 @@
             <section>
                 <h2>Обо мне</h2>
                 <p class="summary">
-                    Специалист с 8+ годами опыта в технической поддержке (1-я и 2-я линии), клиентском сервисе и IT-проектах. 
-                    Обладаю уникальным сочетанием <strong>аналитического склада ума</strong> и <strong>безупречных речевых компетенций</strong> (благодаря педагогическому бэкграунду): 
-                    умею профессионально работать с тикетами в Jira, диагностировать проблемы, настраивать системы и предельно ясно, 
-                    структурированно объяснять сложные технические нюансы как клиентам, так и разработчикам. Имею практический опыт 
+                    Специалист с 8+ годами опыта в технической поддержке (1-я и 2-я линии), клиентском сервисе и IT-проектах.
+                    Обладаю уникальным сочетанием <strong>аналитического склада ума</strong> и <strong>безупречных речевых компетенций</strong> (благодаря педагогическому бэкграунду):
+                    умею профессионально работать с тикетами в Jira, диагностировать проблемы, настраивать системы и предельно ясно,
+                    структурированно объяснять сложные технические нюансы как клиентам, так и разработчикам. Имею практический опыт
                     построения процессов саппорта с нуля, модерации данных и работы в мультиязычных командах.
                 </p>
             </section>
@@ -232,7 +211,7 @@
 
             <section>
                 <h2>Опыт работы</h2>
-                
+
                 <div class="experience-item">
                     <div class="job-header">
                         <div class="job-title">Специалист технической поддержки полного цикла (L1/L2)</div>
