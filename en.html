@@ -79,7 +79,16 @@
         }
         .lang-btn.active { background: var(--primary); color: #0d1421; border-color: var(--primary); }
         .lang-btn:hover:not(.active) { color: var(--text-main); border-color: var(--text-muted); }
-
+        .lang-btn.pdf {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+        .lang-btn.pdf:hover {
+            color: var(--text-main);
+            border-color: var(--primary);
+            background: var(--primary-soft);
+        }
         .content { padding: 2.75rem 3rem; }
         .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.75rem; margin-bottom: 2.75rem; }
         .stat-item {
@@ -160,9 +169,10 @@
 <body>
     <div class="container">
         <div class="header-block">
-            <div class="lang-switch">
+                       <div class="lang-switch">
                 <a href="index.html" class="lang-btn">RU</a>
                 <a href="en.html" class="lang-btn active">EN</a>
+                <a href="resume.pdf" class="lang-btn pdf" download="Artem_Myshin_Resume.pdf">📄 PDF</a>
             </div>
             <h1>Artem Myshin</h1>
             <div class="title">L1 / L2 Support | Full-Cycle Specialist | Customer Success</div>
