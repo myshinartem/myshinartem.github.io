@@ -4,453 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Артем Мышин — L1/L2 Support & Head of Support</title>
+    <link rel="alternate" hreflang="ru" href="https://myshinartem.github.io/" />
+    <link rel="alternate" hreflang="en" href="https://myshinartem.github.io/en.html" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-dark: #0f172a;
-            --bg-card: #1e293b;
-            --bg-card-hover: #334155;
-            --text-primary: #f1f5f9;
-            --text-secondary: #94a3b8;
-            --accent: #3b82f6;
-            --accent-hover: #2563eb;
-            --accent-glow: rgba(59, 130, 246, 0.3);
-            --gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            --primary: #2563eb;
+            --primary-soft: #eff6ff;
+            --text-main: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --bg-page: #f1f5f9;
+            --bg-card: #ffffff;
+            --border-soft: #e2e8f0;
+            --shadow-float: 0 20px 40px -12px rgba(15, 23, 42, 0.08);
         }
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            line-height: 1.6;
-            color: var(--text-primary);
-            background: var(--bg-dark);
+            line-height: 1.65;
+            color: var(--text-main);
+            background-color: var(--bg-page);
             -webkit-font-smoothing: antialiased;
-            min-height: 100vh;
+            padding: 2rem 1rem;
         }
         .container {
-            max-width: 820px;
-            margin: 3rem auto;
-            padding: 0 1.5rem;
-        }
-        
-        /* HEADER */
-        .header {
+            max-width: 800px;
+            margin: 0 auto;
             background: var(--bg-card);
-            padding: 2.5rem;
             border-radius: 24px;
-            margin-bottom: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        }
-        .header-content {
-            display: grid;
-            grid-template-columns: 1fr auto;
-            gap: 2rem;
-            align-items: center;
-            margin-bottom: 2rem;
-        }
-        .name {
-            font-size: 2.5rem;
-            font-weight: 800;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.5rem;
-        }
-        .title {
-            font-size: 1.25rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-        }
-        .avatar {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: var(--gradient);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: white;
-            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
-            border: 4px solid var(--bg-card);
-        }
-        
-        /* CONTACT BAR */
-        .contact-bar {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 1rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 0.75rem 1rem;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            transition: all 0.3s ease;
-        }
-        .contact-item:hover {
-            background: rgba(59, 130, 246, 0.1);
-            transform: translateY(-2px);
-        }
-        .contact-icon {
-            font-size: 1.25rem;
-        }
-        .contact-link {
-            color: var(--text-primary);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-        }
-        .contact-link:hover {
-            color: var(--accent);
-        }
-        
-        /* STATS */
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.25rem;
-            margin-bottom: 2rem;
-        }
-        .stat-item {
-            background: var(--bg-card);
-            padding: 1.5rem;
-            border-radius: 16px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s ease;
-        }
-        .stat-item:hover {
-            background: var(--bg-card-hover);
-            transform: translateY(-4px);
-            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
-        }
-        .stat-number {
-            font-size: 2rem;
-            font-weight: 800;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            display: block;
-            margin-bottom: 0.25rem;
-        }
-        .stat-label {
-            font-size: 0.875rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-        }
-        
-        /* SECTIONS */
-        section {
-            background: var(--bg-card);
-            padding: 2.5rem;
-            border-radius: 24px;
-            margin-bottom: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-        }
-        h2 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-        h2::before {
-            content: "";
-            display: block;
-            width: 6px;
-            height: 28px;
-            background: var(--gradient);
-            border-radius: 4px;
-        }
-        .summary {
-            font-size: 1.05rem;
-            line-height: 1.7;
-            color: var(--text-secondary);
-            padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 12px;
-            border-left: 4px solid var(--accent);
-        }
-        
-        /* SKILLS */
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-        }
-        .skill-tag {
-            background: rgba(59, 130, 246, 0.15);
-            color: var(--accent);
-            padding: 0.6rem 1.2rem;
-            border-radius: 99px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            transition: all 0.3s ease;
-        }
-        .skill-tag:hover {
-            background: var(--accent);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px var(--accent-glow);
-        }
-        
-        /* EXPERIENCE */
-        .experience-item {
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s ease;
-        }
-        .experience-item:last-child {
-            margin-bottom: 0;
-        }
-        .experience-item:hover {
-            background: rgba(59, 130, 246, 0.05);
-            border-color: rgba(59, 130, 246, 0.3);
-        }
-        .job-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            flex-wrap: wrap;
-            margin-bottom: 0.5rem;
-            gap: 0.5rem;
-        }
-        .job-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--text-primary);
-        }
-        .job-date {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            font-weight: 600;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 0.25rem 0.75rem;
-            border-radius: 6px;
-        }
-        .company {
-            font-size: 1rem;
-            color: var(--accent);
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-        .job-description ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        .job-description li {
+            box-shadow: var(--shadow-float);
+            border: 1px solid var(--border-soft);
+            overflow: hidden;
             position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 0.6rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
         }
-        .job-description li::before {
-            content: "▹";
-            color: var(--accent);
-            font-weight: bold;
+        .header-block {
+            background: linear-gradient(to bottom, #f8fafc 0%, #ffffff 100%);
+            padding: 3.5rem 3rem 2.5rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border-soft);
+        }
+        .header-block::after {
+            content: '';
             position: absolute;
-            left: 0;
-            font-size: 1.1rem;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), #60a5fa);
         }
+        h1 { font-size: 2.5rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.5rem; letter-spacing: -0.03em; }
+        .title { font-size: 1.15rem; color: var(--primary); font-weight: 600; margin-bottom: 2rem; letter-spacing: -0.01em; }
+        .contacts { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.75rem; }
+        .contact-pill {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: var(--bg-page); color: var(--text-secondary);
+            text-decoration: none; font-size: 0.9rem; font-weight: 500;
+            padding: 0.6rem 1.2rem; border-radius: 99px;
+            border: 1px solid var(--border-soft);
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .contact-pill:hover { background: var(--primary-soft); color: var(--primary); border-color: var(--primary); transform: translateY(-2px); }
         
-        /* EDUCATION */
-        .education-item {
-            padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+        .lang-switch { position: absolute; top: 1.5rem; right: 1.5rem; display: flex; gap: 0.5rem; }
+        .lang-btn {
+            padding: 0.4rem 0.8rem; border-radius: 8px; text-decoration: none;
+            font-size: 0.85rem; font-weight: 600; color: var(--text-muted);
+            background: transparent; border: 1px solid var(--border-soft);
+            transition: all 0.2s ease;
         }
-        .degree {
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: var(--text-primary);
-            margin-bottom: 0.25rem;
-        }
-        .school {
-            color: var(--text-secondary);
-            font-weight: 500;
-        }
-        
-        @media (max-width: 640px) {
-            .container { margin: 0; padding: 0; }
-            .header { border-radius: 0; padding: 1.5rem; }
-            section { border-radius: 0; padding: 1.5rem; }
-            .header-content { grid-template-columns: 1fr; text-align: center; }
-            .avatar { margin: 0 auto; }
-            .name { font-size: 2rem; }
-            .contact-bar { grid-template-columns: 1fr; }
-            .job-header { flex-direction: column; }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <header class="header">
-            <div class="header-content">
-                <div>
-                    <h1 class="name">Артем Мышин</h1>
-                    <p class="title">L1 / L2 Support | Head of Support | IT & Customer Success</p>
-                </div>
-                <div class="avatar">АМ</div>
-            </div>
-            
-            <div class="contact-bar">
-                <div class="contact-item">
-                    <span class="contact-icon">📧</span>
-                    <a href="mailto:pfvfhfirf@gmail.com" class="contact-link">pfvfhfirf@gmail.com</a>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-icon">✈️</span>
-                    <a href="https://t.me/IshuRabotuAgain" class="contact-link">@IshuRabotuAgain</a>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-icon">📱</span>
-                    <a href="tel:+79214035696" class="contact-link">+7 (921) 403-56-96</a>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-icon">💼</span>
-                    <span class="contact-link">Полная занятость</span>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-icon">🕐</span>
-                    <span class="contact-link">Удалённо / Гибрид</span>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-icon">📍</span>
-                    <span class="contact-link">Санкт-Петербург</span>
-                </div>
-            </div>
-        </header>
-
-        <div class="stats">
-            <div class="stat-item">
-                <span class="stat-number">8+ лет</span>
-                <span class="stat-label">Опыт в саппорте и IT</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">7 000+</span>
-                <span class="stat-label">Клиентов на поддержке</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">English C1</span>
-                <span class="stat-label">Мультиязычный сервис</span>
-            </div>
-        </div>
-
-        <section>
-            <h2>Обо мне</h2>
-            <p class="summary">
-                Специалист с 8+ годами опыта в технической поддержке (1-я и 2-я линии), клиентском сервисе и IT-проектах. 
-                Обладаю уникальным сочетанием сильного бэкграунда в коммуникации и технической экспертизы: умею профессионально 
-                работать с тикетами в Jira, диагностировать проблемы пользователей, настраивать оборудование/системы и предельно 
-                понятно объяснять сложные технические нюансы как клиентам, так и разработчикам. Имею практический опыт построения 
-                процессов саппорта с нуля и работы в мультиязычных командах (EN C1).
-            </p>
-        </section>
-
-        <section>
-            <h2>Ключевые навыки</h2>
-            <div class="skills-grid">
-                <span class="skill-tag">Technical Support (L1/L2)</span>
-                <span class="skill-tag">Atlassian Jira</span>
-                <span class="skill-tag">CRM Systems</span>
-                <span class="skill-tag">AAA (Auth & Accounting)</span>
-                <span class="skill-tag">Customer Support & Success</span>
-                <span class="skill-tag">English (C1 Advanced)</span>
-                <span class="skill-tag">Account Management</span>
-                <span class="skill-tag">Деловая коммуникация</span>
-                <span class="skill-tag">Аналитика и работа с тикетами</span>
-            </div>
-        </section>
-
-        <section>
-            <h2>Опыт работы</h2>
-            
-            <div class="experience-item">
-                <div class="job-header">
-                    <div class="job-title">Преподаватель</div>
-                    <div class="job-date">Август 2024 — Наст. время</div>
-                </div>
-                <div class="company">Онлайн-школа «Тетрика» · Москва</div>
-                <div class="job-description">
-                    <ul>
-                        <li>Фоновая работа, которой обеспечивал себя, пока пытался развиться как самостоятельный предприниматель и разрабатывал собственный IT-продукт.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="experience-item">
-                <div class="job-header">
-                    <div class="job-title">1-man Support (Head of Support / 1-я и 2-я линия)</div>
-                    <div class="job-date">Октябрь 2023 — Август 2024</div>
-                </div>
-                <div class="company">Лидгид · Санкт-Петербург</div>
-                <div class="job-description">
-                    <ul>
-                        <li>Единолично обслуживал отдел support'а в компании на 70+ активных сотрудников и более 7 000 клиентов.</li>
-                        <li>Выполнял обязанности Head of Support и непосредственно 1-й и 2-й линий поддержки (разбор инцидентов, эскалация багов).</li>
-                        <li>Самостоятельно контролировал потоки входящих обращений через почту, CRM и другие каналы.</li>
-                        <li>Обеспечивал мультиязычную техподдержку (английский, французский, испанский, португальский).</li>
-                        <li>Собирал аналитику по инцидентам и передавал отчетность в продуктовый и технический отделы.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="experience-item">
-                <div class="job-header">
-                    <div class="job-title">Старший специалист по работе с клиентами</div>
-                    <div class="job-date">Декабрь 2021 — Август 2023</div>
-                </div>
-                <div class="company">Okko · Санкт-Петербург</div>
-                <div class="job-description">
-                    <ul>
-                        <li>Первая линия технической поддержки пользователей (чаты, почта, тикет-системы).</li>
-                        <li>Диагностика сбоев клиентского ПО, помощь в решении сложных технических неполадок воспроизведения и авторизации.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="experience-item">
-                <div class="job-header">
-                    <div class="job-title">Специалист отдела технической поддержки</div>
-                    <div class="job-date">Июнь 2018 — Октябрь 2018</div>
-                </div>
-                <div class="company">Провайдер интернет и IPTV «Доминанта»</div>
-                <div class="job-description">
-                    <ul>
-                        <li>Удаленная диагностика сетевого оборудования, настройка роутеров, устранение неполадок связи.</li>
-                        <li>Регистрация и трекинг инцидентов в корпоративной системе учета заявок.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Образование</h2>
-            <div class="education-item">
-                <div class="degree">Высшее образование, Филологический факультет · Русский язык и литература</div>
-                <div class="school">Государственная полярная академия, Санкт-Петербург (2015)</div>
-            </div>
-        </section>
-    </div>
-</body>
-</html>
+        .lang-btn.active { background: var(--primary); color: #ffffff; border-color: var(--primary); }
+        .lang-btn:hover:not(.
