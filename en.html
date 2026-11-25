@@ -43,6 +43,7 @@
             padding: 3.5rem 3rem 2.5rem;
             text-align: center;
             border-bottom: 1px solid var(--border-soft);
+            position: relative;
         }
         .header-block::after {
             content: '';
@@ -63,12 +64,24 @@
             transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .contact-pill:hover { background: var(--primary-soft); color: var(--primary); border-color: var(--primary); transform: translateY(-2px); }
-        
-        .lang-switch { position: absolute; top: 1.5rem; right: 1.5rem; display: flex; gap: 0.5rem; }
+
+        .lang-switch {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            display: flex;
+            gap: 0.5rem;
+            z-index: 2;
+        }
         .lang-btn {
-            padding: 0.4rem 0.8rem; border-radius: 8px; text-decoration: none;
-            font-size: 0.85rem; font-weight: 600; color: var(--text-muted);
-            background: transparent; border: 1px solid var(--border-soft);
+            padding: 0.4rem 0.8rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            background: transparent;
+            border: 1px solid var(--border-soft);
             transition: all 0.2s ease;
         }
         .lang-btn.active { background: var(--primary); color: #ffffff; border-color: var(--primary); }
@@ -83,7 +96,7 @@
         .stat-item:hover { background: #ffffff; border-color: var(--border-soft); transform: translateY(-3px); box-shadow: 0 8px 24px -8px rgba(0,0,0,0.08); }
         .stat-number { font-size: 1.75rem; font-weight: 800; color: var(--primary); display: block; margin-bottom: 0.25rem; }
         .stat-label { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; line-height: 1.4; }
-        
+
         section { margin-bottom: 3rem; }
         section:last-child { margin-bottom: 0; }
         h2 {
@@ -107,7 +120,7 @@
             border: 1px solid var(--border-soft); transition: all 0.2s ease;
         }
         .skill-tag:hover { border-color: var(--primary); color: var(--primary); background: var(--primary-soft); }
-        
+
         .experience-item { margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border-soft); }
         .experience-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
         .job-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem; }
@@ -126,7 +139,7 @@
         .education-item { padding: 1.5rem; background: var(--bg-page); border-radius: 16px; }
         .degree { font-weight: 700; font-size: 1.05rem; color: var(--text-main); margin-bottom: 0.25rem; }
         .school { color: var(--text-muted); font-size: 0.95rem; }
-        
+
         @media (max-width: 640px) {
             body { padding: 0; background: var(--bg-card); }
             .container { border-radius: 0; border: none; box-shadow: none; }
@@ -173,10 +186,10 @@
             <section>
                 <h2>About Me</h2>
                 <p class="summary">
-                    Specialist with 8+ years of experience in technical support (L1/L2), customer service, and IT projects. 
-                    I possess a unique combination of an <strong>analytical mindset</strong> and <strong>exceptional communication skills</strong> (thanks to my pedagogical background): 
-                    I professionally handle tickets in Jira, diagnose issues, configure systems, and clearly explain complex technical 
-                    nuances to both clients and developers. I have practical experience building support processes from scratch, 
+                    Specialist with 8+ years of experience in technical support (L1/L2), customer service, and IT projects.
+                    I combine an <strong>analytical mindset</strong> with <strong>exceptional communication skills</strong> (thanks to my pedagogical background):
+                    I handle tickets in Jira professionally, diagnose issues, configure systems, and clearly explain complex technical
+                    nuances to both clients and developers. I have hands-on experience building support processes from scratch,
                     data moderation, and working in multilingual teams.
                 </p>
             </section>
@@ -198,7 +211,7 @@
 
             <section>
                 <h2>Work Experience</h2>
-                
+
                 <div class="experience-item">
                     <div class="job-header">
                         <div class="job-title">Full-Cycle Technical Support Specialist (L1/L2)</div>
@@ -246,7 +259,7 @@
 
                 <div class="experience-item">
                     <div class="job-header">
-                        <div class="job-title">Training Center Administrator / Department Head</div>
+                        <div class="job-title">Training Center Administrator / Department Lead</div>
                         <div class="job-date">Sep 2019 — Mar 2020</div>
                     </div>
                     <div class="company">Mefodiy Training Center</div>
@@ -255,7 +268,7 @@
                             <li>Managed the full learning cycle: client consulting, group formation, scheduling, and career guidance.</li>
                             <li>Worked with databases, maintained statistics and SMM, including professional handling of negative feedback and client retention.</li>
                             <li>Developed and edited educational and methodological materials, created tests for group and individual classes.</li>
-                            <li>Developed comprehensive collections of rhetorical exercises to develop students' public speaking and communication skills.</li>
+                            <li>Developed a comprehensive collection of rhetorical exercises to build students' public speaking and communication skills.</li>
                         </ul>
                     </div>
                 </div>
@@ -282,9 +295,9 @@
                     <div class="company">Tetrika Online School · Moscow</div>
                     <div class="job-description">
                         <ul>
-                            <li>Part-time role that allows me to maintain teaching skills while developing new competencies.</li>
-                            <li>Active exploration and application of AI tools and Large Language Models (LLMs) in the educational process.</li>
-                            <li>Currently seeking a more substantial and long-term project for professional growth.</li>
+                            <li>Part-time role that lets me keep my teaching skills sharp while exploring new competencies.</li>
+                            <li>Active use of AI tools and Large Language Models (LLMs) in the educational process.</li>
+                            <li>Currently looking for a more substantial, long-term project to grow into.</li>
                         </ul>
                     </div>
                 </div>
