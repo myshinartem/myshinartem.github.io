@@ -9,16 +9,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #6b93d6;
-            --primary-soft: rgba(107, 147, 214, 0.12);
-            --text-main: #e6ebf2;
-            --text-secondary: #b6c2d1;
-            --text-muted: #8a97a8;
-            --bg-page: #0d1421;
-            --bg-card: #161f2e;
-            --bg-inset: #1b2536;
-            --border-soft: #2a3648;
-            --shadow-float: 0 18px 40px -16px rgba(0, 0, 0, 0.55);
+            --primary: #7c9cdb;
+            --primary-soft: rgba(124, 156, 219, 0.15);
+            --text-main: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --bg-page: #111827;
+            --bg-card: #1e293b;
+            --bg-inset: #253347;
+            --border-soft: #334155;
+            --shadow-float: 0 18px 40px -16px rgba(0, 0, 0, 0.5);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -63,9 +63,9 @@
             text-decoration: none; font-size: 0.88rem; font-weight: 500;
             padding: 0.55rem 1.1rem; border-radius: 8px;
             border: 1px solid var(--border-soft);
-            transition: all 0.2s ease;
+            transition: all 0.25s ease;
         }
-        .contact-pill:hover { color: var(--text-main); border-color: var(--primary); }
+        .contact-pill:hover { color: var(--text-main); border-color: var(--primary); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
 
         .lang-switch {
             position: absolute; top: 1.25rem; right: 1.25rem;
@@ -85,6 +85,13 @@
         .stat-item {
             background: var(--bg-inset); padding: 1.25rem 1rem; border-radius: 10px;
             text-align: center; border: 1px solid var(--border-soft);
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+        .stat-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px -8px rgba(0,0,0,0.4);
+            border-color: var(--primary);
         }
         .stat-number { font-size: 1.6rem; font-weight: 700; color: var(--primary); display: block; margin-bottom: 0.25rem; }
         .stat-label { font-size: 0.82rem; color: var(--text-muted); font-weight: 500; line-height: 1.4; }
@@ -111,13 +118,19 @@
             border-radius: 6px; font-size: 0.88rem; font-weight: 500;
             border: 1px solid var(--border-soft); transition: all 0.2s ease;
         }
-        .skill-tag:hover { border-color: var(--primary); color: var(--text-main); }
+        .skill-tag:hover { border-color: var(--primary); color: var(--text-main); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
 
         .experience-item { margin-bottom: 1.75rem; padding-bottom: 1.75rem; border-bottom: 1px solid var(--border-soft); }
         .experience-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
-        .job-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.4rem; }
+        .job-header {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 0.75rem;
+            align-items: baseline;
+            margin-bottom: 0.4rem;
+        }
         .job-title { font-size: 1.05rem; font-weight: 700; color: var(--text-main); }
-        .job-date { font-size: 0.82rem; color: var(--text-muted); font-weight: 600; background: var(--bg-inset); padding: 0.2rem 0.7rem; border-radius: 6px; border: 1px solid var(--border-soft); }
+        .job-date { font-size: 0.82rem; color: var(--text-muted); font-weight: 600; background: var(--bg-inset); padding: 0.2rem 0.7rem; border-radius: 6px; border: 1px solid var(--border-soft); white-space: nowrap; }
         .company { font-size: 0.92rem; color: var(--primary); font-weight: 600; margin-bottom: 0.9rem; }
         .job-description ul { list-style-type: none; padding-left: 0; }
         .job-description li {
@@ -138,7 +151,8 @@
             .header-block { padding: 2.5rem 1.5rem 2rem; }
             .content { padding: 1.75rem 1.5rem; }
             h1 { font-size: 1.9rem; }
-            .job-header { flex-direction: column; gap: 0.25rem; }
+            .job-header { grid-template-columns: 1fr; gap: 0.4rem; }
+            .job-date { justify-self: start; }
             .lang-switch { position: static; justify-content: center; margin-bottom: 1.25rem; }
         }
     </style>
